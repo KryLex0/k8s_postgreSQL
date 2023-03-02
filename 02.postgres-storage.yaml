@@ -1,7 +1,9 @@
-kind: PersistentVolume
+## Creation of Persistent Storage Volume & Persistent Volume Claim
 apiVersion: v1
+kind: PersistentVolume
 metadata:
   name: postgres-pv-volume
+  namespace: ns-postgres
   labels:
     type: local
     app: postgres
@@ -18,6 +20,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: postgres-pv-claim
+  namespace: ns-postgres
   labels:
     app: postgres
 spec:

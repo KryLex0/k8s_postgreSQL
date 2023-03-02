@@ -1,7 +1,9 @@
+## Creation of configMap
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: postgres-config
+  namespace: ns-postgres
   labels:
     app: postgres
 data:

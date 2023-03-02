@@ -1,7 +1,9 @@
+## Creation of postgreSQL Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
+  namespace: ns-postgres
 spec:
   replicas: 1
   selector:
