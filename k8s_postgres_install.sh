@@ -1,10 +1,4 @@
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-POSTGRES_DB=postgresdb
-
-POSTGRES_STORAGE=5Gi
-POSTGRES_IMAGE=postgres:15.2
-POSTGRES_PORT=5432
+. values
 
 ## Creation of configMap
 echo 'apiVersion: v1
