@@ -1,0 +1,11 @@
+## Check cluster
+#pg_lsclusters
+
+## Connect to postgres as postgres user
+#sudo -u postgres psql -p {postgres_cluster_port}
+
+## Get cluster name and version
+SELECT current_setting('cluster_name'), current_setting('server_version');
+
+## Path to pg_hba.conf
+/etc/postgresql/15/slave/pg_hba.conf 

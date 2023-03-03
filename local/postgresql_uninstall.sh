@@ -1,0 +1,1 @@
+sudo apt remove postgresql-15 postgresql-client-15
