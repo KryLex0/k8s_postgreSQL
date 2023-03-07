@@ -1,3 +1,5 @@
+pg_lsclusters
+
 echo "Do you want to recreate an empty cluster? (y/n)"
 read response
 
