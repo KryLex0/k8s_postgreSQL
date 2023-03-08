@@ -1,7 +1,7 @@
 ######################################################################
 ###################### Configure APT Repository ######################
 ######################################################################
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+sudo sh -c 'echo "deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
 
@@ -61,9 +61,17 @@ echo "PostgreSQL 15 installed successfully!"
 ############################ Manage Users ############################
 ######################################################################
 
+#Alter default postgres user password
+sudo -u postgres psql -U postgres -d postgres -c "ALTER USER postgres WITH PASSWORD 'postgres';"
+
+echo "PostgreSQL default user password changed to 'postgres'"
+
+echo "To connect to psql, use the following command: psql -h localhost -U postgres [-d dbName]"
+
+
 ##access postgres
 #sudo -u postgres psql
-#psql -h localhost -U postgres
+
 ##for user assigned to DB
 #psql -h localhost -U testuser -d testdb
 
